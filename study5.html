@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 5 Materials | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fefefe;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a5914;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .back-btn {
+      background-color: white;
+      color: #6a5914;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #f1e4b3;
+    }
+
+    .content {
+      margin-top: 2rem;
+    }
+
+    .subject {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .subject h2 {
+      margin-top: 0;
+      color: #6a5914;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Class 5 Study Materials</h1>
+    <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+  </header>
+
+  <div class="content">
+    <div class="subject">
+      <h2>English</h2>
+      <p>Reading comprehension, grammar rules, essay writing, and vocabulary enrichment.</p>
+    </div>
+
+    <div class="subject">
+      <h2>Math</h2>
+      <p>Large numbers, operations, decimals, fractions, and basic geometry concepts.</p>
+    </div>
+
+    <div class="subject">
+      <h2>Hindi</h2>
+      <p>मुहावरे, पत्र लेखन, कहानी लेखन और व्याकरण संबंधी अभ्यास।</p>
+    </div>
+
+    <div class="subject">
+      <h2>Marathi</h2>
+      <p>गद्य, पद्य वाचन, व्याकरण, लेखन कौशल्य आणि शब्दसंपत्ती वाढवणे.</p>
+    </div>
+
+    <div class="subject">
+      <h2>History</h2>
+      <p>Important rulers, ancient civilizations, Indian freedom struggle basics.</p>
+    </div>
+
+    <div class="subject">
+      <h2>Geography</h2>
+      <p>Maps, landforms, states of India, climate and natural resources.</p>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

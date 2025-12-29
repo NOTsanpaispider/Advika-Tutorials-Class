@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | ADVIKA TUTORIAL</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fef8e1, #f5e8ba);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #a88d35;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .welcome {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #fff9d6;
+    }
+
+    .top-buttons {
+      position: absolute;
+      right: 2rem;
+      top: 1.5rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      background-color: white;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      padding: 8px 14px;
+      color: #a88d35;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #fff6d6;
+    }
+
+    .dashboard {
+      flex: 1;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: #a88d35;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      padding: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        font-size: 1.4rem;
+      }
+      .top-buttons {
+        flex-direction: column;
+        top: 1rem;
+        right: 1rem;
+      }
+      .btn {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    ADVIKA Dashboard
+    <div class="welcome" id="welcomeText"></div>
+    <div class="top-buttons">
+      <button class="btn" onclick="goHome()">Home</button>
+      <button class="btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <a href="studymaterial.html" class="card-link">
+      <div class="card">
+        <h3>View Materials</h3>
+        <p>Access PDFs, notes, and reference books assigned to your class.</p>
+      </div>
+    </a>
+
+    <a href="Zoom.html" class="card-link">
+      <div class="card">
+        <h3>Attend Live Classes</h3>
+        <p>Join Zoom or Google Meet links directly from here.</p>
+      </div>
+    </a>
+
+    <a href="test.html" class="card-link">
+      <div class="card">
+        <h3>Practice Tests</h3>
+        <p>Take quizzes and previous year paper mock tests.</p>
+      </div>
+    </a>
+
+    <a href="progress.html" class="card-link">
+      <div class="card">
+        <h3>Progress Report</h3>
+        <p>View your performance analytics and test results.</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">© 2025 ADVIKA Tutorial | All rights reserved</div>
+
+  <script>
+    const name = localStorage.getItem("student_name");
+    const std = localStorage.getItem("student_std");
+
+    if (!name || !std) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcomeText").textContent = `Welcome, ${name} (Class ${std})`;
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress Report | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf0;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a5914;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .back-btn {
+      background-color: white;
+      color: #6a5914;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #f1e4b3;
+    }
+
+    .student-info {
+      margin: 2rem auto;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .student-info p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    th {
+      background-color: #f5eec0;
+      color: #4a3d0f;
+      font-weight: bold;
+    }
+
+    td {
+      color: #333;
+    }
+
+    .remarks {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fdf8dc;
+      padding: 1rem;
+      border-left: 5px solid #d4b312;
+      border-radius: 8px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Progress Report</h1>
+    <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+  </header>
+
+  <div class="student-info">
+    <p><strong>Name:</strong> <span id="studentName">N/A</span></p>
+    <p><strong>Class:</strong> <span id="studentClass">N/A</span></p>
+    <p><strong>School:</strong> <span id="studentSchool">ADVIKA Tutorial</span></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Marks Obtained</th>
+        <th>Total Marks</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody id="reportBody">
+      <!-- Rows injected by JS -->
+    </tbody>
+  </table>
+
+  <div class="remarks">
+    <strong>Teacher's Comment:</strong> Keep up the good work and continue practicing regularly for improvement.
+  </div>
+
+  <script>
+    // Example data
+    const studentData = {
+      name: localStorage.getItem("student_name") || "Student Name",
+      std: localStorage.getItem("student_std") || "1",
+      school: "ADVIKA Tutorial",
+      marks: {
+        English: 42,
+        Hindi: 38,
+        Marathi: 40,
+        Math: 45,
+        Science: 41,
+        History: 39
+      },
+      total: 50
+    };
+
+    // Display student info
+    document.getElementById("studentName").textContent = studentData.name;
+    document.getElementById("studentClass").textContent = "Class " + studentData.std;
+    document.getElementById("studentSchool").textContent = studentData.school;
+
+    // Generate report table
+    const reportBody = document.getElementById("reportBody");
+    Object.entries(studentData.marks).forEach(([subject, marks]) => {
+      const grade = getGrade(marks, studentData.total);
+      reportBody.innerHTML += `
+        <tr>
+          <td>${subject}</td>
+          <td>${marks}</td>
+          <td>${studentData.total}</td>
+          <td>${grade}</td>
+        </tr>
+      `;
+    });
+
+    function getGrade(score, total) {
+      const percent = (score / total) * 100;
+      if (percent >= 90) return "A+";
+      if (percent >= 75) return "A";
+      if (percent >= 60) return "B";
+      if (percent >= 40) return "C";
+      return "D";
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

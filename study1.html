@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 1 Materials | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fef6e4, #ffe9b3);
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #a88d35;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      position: relative;
+    }
+
+    .logout-btn {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.2rem;
+      background-color: white;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      padding: 6px 12px;
+      color: #a88d35;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #6a5914;
+      margin-bottom: 1rem;
+    }
+
+    .subject {
+      background: white;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .subject h3 {
+      color: #a88d35;
+      margin-bottom: 0.5rem;
+    }
+
+    .subject ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .subject ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .subject ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.2s ease;
+    }
+
+    .subject ul li a:hover {
+      color: #a88d35;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        font-size: 1.2rem;
+      }
+
+      .logout-btn {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    Class 1 Study Materials
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="container">
+    <div class="subject">
+      <h3>📘 English</h3>
+      <ul>
+        <li><a href="pdfs/english-alphabets.pdf" target="_blank">Alphabets & Phonics</a></li>
+        <li><a href="pdfs/english-stories.pdf" target="_blank">Short Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="subject">
+      <h3>🔢 Math</h3>
+      <ul>
+        <li><a href="pdfs/math-numbers.pdf" target="_blank">Numbers & Counting</a></li>
+        <li><a href="pdfs/math-shapes.pdf" target="_blank">Shapes & Patterns</a></li>
+      </ul>
+    </div>
+
+    <div class="subject">
+      <h3>🌿 EVS (Environmental Studies)</h3>
+      <ul>
+        <li><a href="pdfs/evs-mybody.pdf" target="_blank">My Body & Senses</a></li>
+        <li><a href="pdfs/evs-family.pdf" target="_blank">My Family & Surroundings</a></li>
+      </ul>
+    </div>
+
+    <div class="subject">
+      <h3>📝 Hindi</h3>
+      <ul>
+        <li><a href="pdfs/hindi-varnmala.pdf" target="_blank">हिंदी वर्णमाला (Varnmala)</a></li>
+        <li><a href="pdfs/hindi-kahani.pdf" target="_blank">बाल कहानियाँ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">© 2025 ADVIKA Tutorial | Class 1 Resources</div>
+
+  <script>
+    // Restrict access if not logged in or not Class 1
+    const name = localStorage.getItem("student_name");
+    const std = localStorage.getItem("student_std");
+
+    if (!name || std !== "1") {
+      alert("Access denied. Only Class 1 students can view this page.");
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>

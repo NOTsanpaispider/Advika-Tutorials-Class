@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 2 Materials | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fefefe;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a5914;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .back-btn {
+      background-color: white;
+      color: #6a5914;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #f1e4b3;
+    }
+
+    .content {
+      margin-top: 2rem;
+    }
+
+    .subject {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .subject h2 {
+      margin-top: 0;
+      color: #6a5914;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Class 2 Study Materials</h1>
+    <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+  </header>
+
+  <div class="content">
+    <div class="subject">
+      <h2>English</h2>
+      <p>Simple sentences, grammar basics, vocabulary building, and reading practice.</p>
+    </div>
+
+    <div class="subject">
+      <h2>Math</h2>
+      <p>2-digit addition and subtraction, basic multiplication, shapes, and measurements.</p>
+    </div>
+
+    <div class="subject">
+      <h2>Hindi</h2>
+      <p>वर्णमाला अभ्यास, सरल वाक्य, कविताएं और अभ्यास कार्य।</p>
+    </div>
+
+    <div class="subject">
+      <h2>Marathi</h2>
+      <p>मराठी वर्णमाला, शब्दकोश, गोष्टी आणि कविता.</p>
+    </div>
+
+    <div class="subject">
+      <h2>EVS</h2>
+      <p>Plants, animals, food, family, and basic environment concepts.</p>
+    </div>
+
+   
+  <script>
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

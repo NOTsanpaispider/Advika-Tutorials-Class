@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Practice Test | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fdfaf3;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a5914;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .back-btn {
+      background-color: white;
+      color: #6a5914;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #f1e4b3;
+    }
+
+    .selector {
+      margin-top: 3rem;
+      background-color: #fffdf5;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #4a3d0f;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .solve-btn {
+      width: 100%;
+      background-color: #6a5914;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .solve-btn:hover {
+      background-color: #4a3d0f;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Practice Test</h1>
+    <button class="back-btn" onclick="goBack()">Back to Dashboard</button>
+  </header>
+
+  <div class="selector">
+    <label for="standard">Select Class:</label>
+    <select id="standard">
+      <option value="">-- Choose Class --</option>
+      <option value="1">Class 1</option>
+      <option value="2">Class 2</option>
+      <option value="3">Class 3</option>
+      <option value="4">Class 4</option>
+      <option value="5">Class 5</option>
+      <option value="6">Class 6</option>
+      <option value="7">Class 7</option>
+      <option value="8">Class 8</option>
+      <option value="9">Class 9</option>
+      <option value="10">Class 10</option>
+    </select>
+
+    <label for="subject">Select Subject:</label>
+    <select id="subject">
+      <option value="">-- Choose Subject --</option>
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+      <option value="marathi">Marathi</option>
+      <option value="math">Math</option>
+      <option value="evs">EVS</option>
+      <option value="science">Science</option>
+      <option value="history">History</option>
+      <option value="geography">Geography</option>
+    </select>
+
+    <button class="solve-btn" onclick="redirectToForm()">Solve Paper</button>
+  </div>
+
+  <script>
+    const formLinks = {
+      "1": {
+        english: "https://forms.gle/example-class1-english",
+        math: "https://forms.gle/example-class1-math",
+        // add more if needed
+      },
+      "5": {
+        history: "https://forms.gle/example-class5-history",
+        geography: "https://forms.gle/example-class5-geography"
+      },
+      "10": {
+        science: "https://forms.gle/example-class10-science",
+        math: "https://forms.gle/example-class10-math"
+      }
+      // add for other classes and subjects
+    };
+
+    function redirectToForm() {
+      const std = document.getElementById("standard").value;
+      const subject = document.getElementById("subject").value;
+
+      if (!std || !subject) {
+        alert("Please select both class and subject.");
+        return;
+      }
+
+      if (formLinks[std] && formLinks[std][subject]) {
+        window.open(formLinks[std][subject], "_blank");
+      } else {
+        alert("Test not available for selected class and subject.");
+      }
+    }
+
+    function goBack() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>

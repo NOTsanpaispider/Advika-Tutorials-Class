@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | ADVIKA TUTORIAL</title>
+  <style>
+    :root {
+      --primary-color: #f4e58a;
+      --dark-bg: #3e3e3e;
+      --text-color: #2c2c2c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f9f8f7;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 1s ease-in-out 1s forwards;
+    }
+
+    .glow-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-shadow: 0 0 10px #f1d963, 0 0 20px var(--primary-color);
+      animation: pulse 1.8s infinite ease-in-out;
+      text-align: center;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+      50% { text-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    #main-content {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out 1.2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    nav {
+      background: var(--dark-bg);
+      padding: 1rem;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--primary-color);
+      margin: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: url('images/banner1.jpg') center/cover no-repeat;
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e0d8a7;
+      padding-bottom: 0.5rem;
+    }
+
+    .stats, .features, .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .stat, .feature-box {
+      background: #fffaf0;
+      border: 1px solid #e0d8a7;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .feature-box {
+      background-color: #fdf6e3;
+      border-left: 5px solid #e0d871;
+    }
+
+    .photos img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-box {
+      background: #f8f4e3;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-box a {
+      color: #2c2c2c;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: var(--dark-bg);
+      color: #eee;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 600px) {
+      nav {
+        display: flex;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 0 1rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      header h1 { font-size: 3rem; }
+      .glow-text { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="glow-text">ADVIKA TUTORIAL</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="fees.html">Fees</a>
+      <a href="teachers.html">Teachers</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Online Study</a>
+    </nav>
+
+    <header>
+      <h1>ADVIKA TUTORIAL</h1>
+      <p>Empowering You to Grow, Succeed & Lead</p>
+    </header>
+
+    <section>
+      <h2>About Our Coaching</h2>
+      <p>With a classical and thoughtful approach, we mentor students and professionals on their path to clarity, success, and fulfillment. Our sessions blend practical strategy with personal insight—tailored uniquely to your goals.</p>
+
+      <div class="photos">
+  <img src="images/books.jpg" alt="Books" style="max-width: 200px;">
+  <img src="images/teacher.jpg" alt="Teacher" style="max-width: 200px;">
+  <img src="images/students.jpg" alt="Students" style="max-width: 200px;">
+</div>
+
+
+    <section>
+      <h2>Why Choose Us</h2>
+      <div class="features">
+        <div class="feature-box">
+          <h3>❄️ AC Classrooms</h3>
+          <p>Comfortable, modern, and climate-controlled environments that keep students focused and stress-free.</p>
+        </div>
+        <div class="feature-box">
+          <h3>👨‍🏫 Skilled Teachers</h3>
+          <p>Experienced and passionate educators dedicated to each student’s growth, clarity, and confidence.</p>
+        </div>
+        <div class="feature-box">
+          <h3>📈 No Improvement, No Fees</h3>
+          <p>We believe in results. If there’s no improvement, we waive your fee. That’s our commitment.</p>
+        </div>
+         <div class="feature-box">
+          <h3>📚Study Material</h3>
+          <p>We will provide you study materials. include books,digest etc new with no extra fees </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Our Impact</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>900+</h3>
+          <p>Students Coached</p>
+        </div>
+        <div class="stat">
+          <h3>15+ Years</h3>
+          <p>Experience</p>
+        </div>
+        <div class="stat">
+          <h3>98%</h3>
+          <p>Success Rate</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-box">
+      <h2>Contact & Visit Us</h2>
+      <p>
+        <strong>Address:</strong>
+        <a href="https://maps.app.goo.gl/89Ez6WMvHXJJtEYX9" target="_blank">
+          Row House No. 46, Sec 12, Dronagiri, Navi Mumbai 📍
+        </a>
+      </p>
+      <p><strong>Phone:</strong> <a href="tel:+919768604880">+91 9768604880</a></p>
+      <p><strong>Email:</strong> <a href="mailto:adhvikatutorial@gmail.com">adhvikatutorial@gmail.com</a></p>
+      <p><strong>Opening Hours:</strong> Monday to Saturday: 2:00 PM – 8:30 PM</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 ADVIKA TUTORIAL</p>
+      <p>
+        📍 <a href="https://maps.app.goo.gl/89Ez6WMvHXJJtEYX9" target="_blank">Dronagiri, Navi Mumbai</a> |
+        <a href="tel:+919768604880">+91 9768604880 (Krishna Thakur)</a> |
+        ✉️ <a href="mailto:adhvikatutorial@gmail.com">adhvikatutorial@gmail.com</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>

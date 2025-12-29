@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials - ADHVIKA TUTORIALS</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #f9f6e9, #fffef3);
+      color: #443c1c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #c1a849;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      max-width: 1000px;
+      padding: 3rem 1rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .testimonial {
+      background-color: white;
+      padding: 2rem;
+      margin: 1.5rem auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: left;
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: "“";
+      font-size: 4rem;
+      color: #c1a849;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+    }
+
+    .testimonial::after {
+      content: "”";
+      font-size: 4rem;
+      color: #c1a849;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+    }
+
+    .testimonial p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #4a4120;
+      margin: 0;
+    }
+
+    .student {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #6a5914;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 10px 24px;
+      font-size: 1rem;
+      color: white;
+      background-color: #6a5914;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #4a3d0f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      background-color: #f5ebc0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #5c4f1f;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .testimonial {
+        padding: 1.5rem;
+      }
+
+      .testimonial::before,
+      .testimonial::after {
+        font-size: 3rem;
+      }
+
+      .testimonial p {
+        font-size: 1.05rem;
+      }
+
+      .btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .testimonial {
+        padding: 1.2rem;
+      }
+
+      .testimonial::before,
+      .testimonial::after {
+        font-size: 2.5rem;
+      }
+
+      .testimonial p {
+        font-size: 1rem;
+      }
+
+      .student {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>What Our Students Say</h1>
+  </header>
+
+  <main>
+
+    <div class="testimonial">
+      <p>ADHVIKA TUTORIALS helped me score 92% in my board exams. The teachers were supportive and the study material was excellent.</p>
+      <div class="student">– Priya, Class 10</div>
+    </div>
+
+    <div class="testimonial">
+      <p>I used to struggle in Math, but now it's my favorite subject! The doubt sessions really made a difference.</p>
+      <div class="student">– Raj, Class 8</div>
+    </div>
+
+    <div class="testimonial">
+      <p>The environment is very friendly, and the way of teaching is unique and engaging. Highly recommended!</p>
+      <div class="student">– Neha, Class 6</div>
+    </div>
+
+    <div class="testimonial">
+      <p>The weekly tests and feedback helped me track my progress and improve every week. Great experience!</p>
+      <div class="student">– Aman, Class 12 Science</div>
+    </div>
+
+    <a class="btn" href="index.html">Back to Home</a>
+
+  </main>
+
+  <footer>
+    &copy; 2025 ADHVIKA TUTORIALS | Learn. Grow. Succeed.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Materials | ADVIKA</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f6fa;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .card {
+      width: 200px;
+      height: 100px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: not-allowed;
+      opacity: 0.5;
+      transition: transform 0.2s;
+    }
+
+    .card.unlocked {
+      cursor: pointer;
+      opacity: 1;
+      background-color: #e7ffe7;
+    }
+
+    .card.unlocked:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logout-btn {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background-color: #a93226;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+
+  <h1>Class Materials</h1>
+  <div class="container" id="cards-container"></div>
+
+  <script>
+    const studentStd = localStorage.getItem("student_std"); // e.g., "5", "1,2,3" or "admin"
+    const userRole = localStorage.getItem("user_role");     // "admin" or "student"
+
+    if (!studentStd || !userRole) {
+      alert("Please log in first.");
+      window.location.href = "login.html";
+    }
+
+    const standards = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+    const allowedClasses = studentStd === "admin" ? standards : studentStd.split(",");
+    const container = document.getElementById("cards-container");
+
+    standards.forEach(std => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      if (allowedClasses.includes(std)) {
+        card.classList.add("unlocked");
+        card.innerHTML = `<a href="study${std}.html">Class ${std}</a>`;
+      } else {
+        card.textContent = `Class ${std}`;
+      }
+
+      container.appendChild(card);
+    });
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
